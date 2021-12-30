@@ -1,5 +1,7 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { ActiveLink } from '../ActiveLink';
 import styles from './styles.module.scss';
 
 interface ProfileProps {
@@ -14,7 +16,6 @@ export function Header() {
       .then(data => setProfile(data))
   }, []);
 
-  console.log(profile);
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -24,10 +25,18 @@ export function Header() {
         width={150}
         height={50}/>
         <nav>
-          <a className={styles.active}>Home</a>
-          <a>Portfolio</a>
-          <a>Repositórios</a>
-          <a>Contato</a>
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a className={styles.active}>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/portfolio">
+            <a>Portfolio</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/repositorios">
+            <a>Repositórios</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/contato">
+            <a>Contato</a>
+          </ActiveLink>
         </nav>
         <img
           src={profile.avatar_url}
