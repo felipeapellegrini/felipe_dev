@@ -18,29 +18,34 @@ export function Header() {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <Image
-        src="/images/logo.svg"
-        alt="header_img"
-        width={150}
-        height={50}/>
-        <nav>
-          <ActiveLink activeClassName={styles.active} href="/">
-            <a className={styles.active}>Home</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/portfolio">
-            <a>Portfolio</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/repositorios">
-            <a>Repositórios</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/contato">
-            <a>Contato</a>
-          </ActiveLink>
-        </nav>
-        <img
-          src={profile.avatar_url}
-          alt="github_profile"
-          className={styles.profile}/>
+        <div className={styles.logo}>
+          <img
+          src="/images/logo.svg"
+          alt="header_img"
+          />
+        </div>
+        <div className={styles.nav}>
+          <nav>
+            <ActiveLink activeClassName={styles.active} href="/">
+              <a className={styles.active}>Home</a>
+            </ActiveLink>
+            <ActiveLink activeClassName={styles.active} href="/portfolio">
+              <a>Portfolio</a>
+            </ActiveLink>
+            <ActiveLink activeClassName={styles.active} href="/repositorios">
+              <a>Repositórios</a>
+            </ActiveLink>
+            <ActiveLink activeClassName={styles.active} href="/contato">
+              <a>Contato</a>
+            </ActiveLink>
+          </nav>
+        </div>
+        <div className={styles.profile}>
+          <img
+            src={profile.avatar_url}
+            alt="github_profile"
+            />
+        </div>
       </div>
     </header>
   );
