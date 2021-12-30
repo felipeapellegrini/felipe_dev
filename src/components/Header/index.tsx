@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ActiveLink } from '../ActiveLink';
 import styles from './styles.module.scss';

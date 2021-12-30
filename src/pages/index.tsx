@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home | Felipe</title>
+        <title>Home | Felipe de Almeida</title>
       </Head>
     </>
   )
